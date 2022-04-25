@@ -12,7 +12,6 @@ xcuserdata
 *.xcodeproj
 Utilities/Docker/*.tar.gz
 .swiftpm
-Package.resolved
 /build
 *.pyc
 .docc-build
