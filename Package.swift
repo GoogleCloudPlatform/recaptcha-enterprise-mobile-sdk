@@ -49,7 +49,7 @@ let package = Package(
         .package(
           name: "Promises",
           url: "https://github.com/google/promises.git",
-          .upToNextMinor(from: "1.2.8")
+          .upToNextMinor(from: "2.1.0")
         )
     ],
     targets: [
@@ -70,13 +70,13 @@ let package = Package(
         ),
         .binaryTarget(
             name: "recaptcha",
-            url: "https://dl.google.com/recaptchaenterprise/V17.0.0/recaptcha.zip",
-            checksum: "137c9707bed94e327dd7dd6a4fa5d953fdb4da3c74ba103d56e11303209a33b0"
+            url: "https://dl.google.com/recaptchaenterprise/V17.0.0/RecaptchaEnterprise-SPM-17.0.0.zip",
+            checksum: "9fd55b6a0c6333c1fb97b236bd04fdcd6f4c9a62f6de042d3c83bfc59301309e"
         ),
         .binaryTarget(
             name: "Protobuf",
             url: "https://dl.google.com/recaptchaenterprise/V17.0.0/protobuf.xcframework.zip",
-            checksum: "f9cbed5e7d1c1b4d3df521273b43b68bc0582c7641b40e0c36d087e23deed8c5"
+            checksum: "baa8452205e1faad8f1261a733087a3aefe49bc6607c1d3dbb6ce9d707d38d5c"
         )
     ]
 )
