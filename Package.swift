@@ -55,7 +55,7 @@ let package = Package(
     targets: [
         .target(
             name: "RecaptchaEnterpriseSwift",
-            dependencies: ["recaptcha-enterprise"]//,
+            dependencies: ["recaptcha-enterprise"]
         ),
         .target (
             name: "recaptcha-enterprise",
@@ -66,7 +66,8 @@ let package = Package(
                            .product(name: "GULNSData", package: "GoogleUtilities"),
                            .product(name: "FBLPromises", package: "Promises"),
                            .product(name: "Promises", package: "Promises"),
-            ]
+            ],
+            publicHeadersPath: "."
         ),
         .binaryTarget(
             name: "recaptcha",
