@@ -71,8 +71,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "recaptcha",
-            url: "https://dl.google.com/recaptchaenterprise/V17.0.0/RecaptchaEnterprise-SPM-17.0.0.zip",
-            checksum: "9fd55b6a0c6333c1fb97b236bd04fdcd6f4c9a62f6de042d3c83bfc59301309e"
+            url: "https://dl.google.com/recaptchaenterprise/V17.0.0/RecaptchaEnterprise-SPM-17.0.0-importtest.zip",
+            checksum: "b614b33b9708f7dceba2189912a90499196e672aabe21c42878077e9e9fe911a"
         ),
         .binaryTarget(
             name: "Protobuf",
