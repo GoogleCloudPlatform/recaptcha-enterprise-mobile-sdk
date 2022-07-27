@@ -57,7 +57,7 @@ let package = Package(
             dependencies: ["recaptcha",
                             "gtm",
                            "Protobuf",
-                           .product(name: "GTMSessionFetcherFull", package: "GTMSessionFetcher"),
+                           .product(name: "GTMSessionFetcherCore", package: "GTMSessionFetcher"),
                            .product(name: "GoogleDataTransport", package: "GoogleDataTransport"),
                            .product(name: "FBLPromises", package: "Promises"),
                            .product(name: "Promises", package: "Promises"),
