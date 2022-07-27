@@ -42,11 +42,6 @@ let package = Package(
           .upToNextMinor(from: "9.1.0")
         ),
         .package(
-          name: "GoogleUtilities",
-          url: "https://github.com/google/GoogleUtilities.git",
-          .upToNextMinor(from: "7.7.1")
-        ),
-        .package(
           name: "Promises",
           url: "https://github.com/google/promises.git",
           .upToNextMinor(from: "2.1.0")
@@ -60,13 +55,18 @@ let package = Package(
         .target (
             name: "recaptcha-enterprise",
             dependencies: ["recaptcha",
+                            "gtm",
                            "Protobuf",
-                           .product(name: "GTMSessionFetcherCore", package: "GTMSessionFetcher"),
+                           .product(name: "GTMSessionFetcherFull", package: "GTMSessionFetcher"),
                            .product(name: "GoogleDataTransport", package: "GoogleDataTransport"),
-                           .product(name: "GULNSData", package: "GoogleUtilities"),
                            .product(name: "FBLPromises", package: "Promises"),
                            .product(name: "Promises", package: "Promises"),
             ],
+            publicHeadersPath: "."
+        ),
+        .target(
+            name: "gtm",
+            sources: [ "gtmlibrary"],
             publicHeadersPath: "."
         ),
         .binaryTarget(
