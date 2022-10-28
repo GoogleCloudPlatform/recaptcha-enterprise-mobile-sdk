@@ -20,47 +20,24 @@ limitations under the License.
 import PackageDescription
 
 let package = Package(
-    name: "RecaptchaEnterpriseSwift",
+    name: "RecaptchaEnterprise",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v12)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "RecaptchaEnterpriseSwift",
-            targets: ["RecaptchaEnterpriseSwift"]),
+            name: "RecaptchaEnterprise",
+            targets: ["recaptcha-enterprise"]),
     ],
     dependencies: [
-        .package(
-          name: "GTMSessionFetcher",
-          url: "https://github.com/google/gtm-session-fetcher.git",
-          .upToNextMinor(from: "1.7.1")
-        ),
-        .package(
-          name: "GoogleDataTransport",
-          url: "https://github.com/google/GoogleDataTransport.git",
-          .upToNextMinor(from: "9.1.0")
-        ),
-        .package(
-          name: "Promises",
-          url: "https://github.com/google/promises.git",
-          .upToNextMinor(from: "2.1.0")
-        )
     ],
     targets: [
-        .target(
-            name: "RecaptchaEnterpriseSwift",
-            dependencies: ["recaptcha-enterprise"]
-        ),
         .target (
             name: "recaptcha-enterprise",
-            dependencies: ["recaptcha",
+            dependencies: ["RecaptchaEnterprise",
                             "gtm",
                            "Protobuf",
-                           .product(name: "GTMSessionFetcherCore", package: "GTMSessionFetcher"),
-                           .product(name: "GoogleDataTransport", package: "GoogleDataTransport"),
-                           .product(name: "FBLPromises", package: "Promises"),
-                           .product(name: "Promises", package: "Promises"),
             ],
             publicHeadersPath: "."
         ),
@@ -70,14 +47,14 @@ let package = Package(
             publicHeadersPath: "."
         ),
         .binaryTarget(
-            name: "recaptcha",
-            url: "https://dl.google.com/recaptchaenterprise/V17.0.0/RecaptchaEnterprise-SPM-17.0.0.zip",
-            checksum: "9fd55b6a0c6333c1fb97b236bd04fdcd6f4c9a62f6de042d3c83bfc59301309e"
+            name: "RecaptchaEnterprise",
+            url: "https://dl.google.com/recaptchaenterprise/v18.0.0/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
+            checksum: "6e8dee2594fd48f72ec57492406451aa360bc65952b0cedd6ca83326ea52ff68"
         ),
         .binaryTarget(
             name: "Protobuf",
-            url: "https://dl.google.com/recaptchaenterprise/V17.0.0/protobuf.xcframework.zip",
-            checksum: "baa8452205e1faad8f1261a733087a3aefe49bc6607c1d3dbb6ce9d707d38d5c"
+            url: "https://dl.google.com/recaptchaenterprise/v18.0.0/RecaptchaEnterprise_iOS_xcframework/protobuf.xcframework.zip",
+            checksum: "e5f485466b0e5a4ef8fc466874c1d5840e4db07bdc9979a0adc9bf978c4b1c58"
         )
     ]
 )
