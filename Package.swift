@@ -44,12 +44,12 @@ let package = Package(
         ),
         .binaryTarget(
             name: "RecaptchaEnterprise",
-            url: "https://dl.google.com/recaptchaenterprise/v18.0.0/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
-            checksum: "41f03b6daaae565d39bf572dfebc1c510284881812ab75da3e3296fa07155b7c"
+            url: "https://dl.google.com/recaptchaenterprise/v18.0.1/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
+            checksum: "de4da53ec4afae7e26828033ecae968c42370af6923e864562a2224bce58d83e"
         ),
         .binaryTarget(
             name: "Protobuf",
-            url: "https://dl.google.com/recaptchaenterprise/v18.0.0/RecaptchaEnterprise_iOS_xcframework/protobuf.xcframework.zip",
+            url: "https://dl.google.com/recaptchaenterprise/v18.0.1/RecaptchaEnterprise_iOS_xcframework/protobuf.xcframework.zip",
             checksum: "e5f485466b0e5a4ef8fc466874c1d5840e4db07bdc9979a0adc9bf978c4b1c58"
         )
     ]
