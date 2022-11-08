@@ -18,7 +18,7 @@ import PackageDescription
 let package = Package(
     name: "RecaptchaEnterprise",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v12)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -44,12 +44,12 @@ let package = Package(
         ),
         .binaryTarget(
             name: "RecaptchaEnterprise",
-            url: "https://dl.google.com/recaptchaenterprise/v18.0.1/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
-            checksum: "de4da53ec4afae7e26828033ecae968c42370af6923e864562a2224bce58d83e"
+            url: "https://dl.google.com/recaptchaenterprise/v18.0.2/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
+            checksum: "1cc6df8b97ec20ba94c5c5fd5f130e7653441e9552793270ce67b05615b15736"
         ),
         .binaryTarget(
             name: "Protobuf",
-            url: "https://dl.google.com/recaptchaenterprise/v18.0.1/RecaptchaEnterprise_iOS_xcframework/protobuf.xcframework.zip",
+            url: "https://dl.google.com/recaptchaenterprise/v18.0.2/RecaptchaEnterprise_iOS_xcframework/protobuf.xcframework.zip",
             checksum: "e5f485466b0e5a4ef8fc466874c1d5840e4db07bdc9979a0adc9bf978c4b1c58"
         )
     ]
