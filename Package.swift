@@ -33,7 +33,6 @@ let package = Package(
             name: "recaptcha-enterprise",
             dependencies: ["RecaptchaEnterprise",
                             "gtm",
-                           "Protobuf",
             ],
             publicHeadersPath: "."
         ),
@@ -44,13 +43,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "RecaptchaEnterprise",
-            url: "https://dl.google.com/recaptchaenterprise/v18.0.2/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
-            checksum: "1cc6df8b97ec20ba94c5c5fd5f130e7653441e9552793270ce67b05615b15736"
-        ),
-        .binaryTarget(
-            name: "Protobuf",
-            url: "https://dl.google.com/recaptchaenterprise/v18.0.2/RecaptchaEnterprise_iOS_xcframework/protobuf.xcframework.zip",
-            checksum: "e5f485466b0e5a4ef8fc466874c1d5840e4db07bdc9979a0adc9bf978c4b1c58"
+            url: "https://dl.google.com/recaptchaenterprise/v18.0.3/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
+            checksum: "6a6604720d0df33def34b10ede024e10f29a6645d03b6128460be4000b5e4474"
         )
     ]
 )
