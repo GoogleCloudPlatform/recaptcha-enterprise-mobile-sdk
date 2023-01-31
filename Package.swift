@@ -31,14 +31,7 @@ let package = Package(
     targets: [
         .target (
             name: "recaptcha-enterprise",
-            dependencies: ["RecaptchaEnterprise",
-                            "gtm",
-            ],
-            publicHeadersPath: "."
-        ),
-        .target(
-            name: "gtm",
-            sources: [ "gtmlibrary"],
+            dependencies: ["RecaptchaEnterprise"],
             publicHeadersPath: "."
         ),
         .binaryTarget(
