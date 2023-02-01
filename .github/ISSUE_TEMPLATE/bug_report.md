@@ -15,9 +15,10 @@ A clear and concise description of what the bug is.
 
 Select the method used to integrate with reCAPTCHA Mobile.
 
-* [ ] SPM
-* [ ] Cocoapods
-* [ ] Direct Download
+* [ ] SPM (iOS)
+* [ ] Cocoapods (iOS)
+* [ ] Direct Download (iOS)
+* [ ] GMaven (Android)
 
 **SDK Version (e.g. 18.0.1):**
 
@@ -38,13 +39,13 @@ A clear and concise description of what you expected to happen.
 
 If applicable, add screenshots to help explain your problem.
 
-**Xcode version (please complete the following information):**
+**Xcode version for iOS (please complete the following information):**
  - Version [e.g. Xcode 13.4.1]
 
 **Device (please complete the following information):**
- - Model: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Simulator or real Device? 
+ - Model: [e.g. Pixel 7, iPhone6]
+ - OS: [e.g. Android 28, iOS8.1]
+ - Emulator/Simulator or real Device? 
 
 **Additional context**
 
