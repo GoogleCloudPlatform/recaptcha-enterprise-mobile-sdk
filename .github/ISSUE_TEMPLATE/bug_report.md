@@ -11,6 +11,10 @@ assignees: ''
 
 A clear and concise description of what the bug is.
 
+**reCAPTCHA Site Key**
+
+Please include your site key so we can examine backend metrics for your integration.
+
 **Integration Method**
 
 Select the method used to integrate with reCAPTCHA Mobile.
