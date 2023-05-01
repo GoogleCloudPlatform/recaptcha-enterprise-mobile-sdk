@@ -43,8 +43,8 @@ let package = Package(
     .binaryTarget(
       name: "RecaptchaEnterprise",
       url:
-        "https://dl.google.com/recaptchaenterprise/v18.1.2/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
-      checksum: "0b0a6ace7f7214216fe0c904df55f28e6a30d0e3772f347a07ed48f5b9779f13"
+        "https://dl.google.com/recaptchaenterprise/v18.2.0/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
+      checksum: "7a92afc89c704366551d2ea0a7973452256d6ee2e972fab918ec730b27af9c74"
     ),
     .target(
       name: "RecaptchaInterop",
