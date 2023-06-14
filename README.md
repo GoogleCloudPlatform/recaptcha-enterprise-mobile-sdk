@@ -9,3 +9,13 @@ To integrate reCAPTCHA Enterprise, please follow the instructions for
 [iOS](https://cloud.google.com/recaptcha-enterprise/docs/instrument-ios-apps)
 and
 [Android](https://cloud.google.com/recaptcha-enterprise/docs/instrument-android-apps).
+
+## Troubleshoot
+
+### Upgrading from 18.X.X to 18.2.0 in Android
+
+WARNING: Due to a bug described in
+[Issue 52](https://github.com/GoogleCloudPlatform/recaptcha-enterprise-mobile-sdk/issues/52),
+some users may experience unrecoverable errors if you have used a version of the
+SDK < 18.2.0 and then upgrade to 18.2.0. Instead please upgrade directly to
+18.2.1.
