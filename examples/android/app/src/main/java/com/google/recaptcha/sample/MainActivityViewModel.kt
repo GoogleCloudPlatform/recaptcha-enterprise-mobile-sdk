@@ -52,8 +52,7 @@ class MainActivityViewModel(
           updateText("User can't Login")
         }
       }.onFailure {
-        // Handle failure, on the example we are blocking the user from login in but one alternative
-        // is to add friction by asking the user to take a selfie,
+        // Handle failure.
         updateText("User blocked from Login.")
       }
     }
