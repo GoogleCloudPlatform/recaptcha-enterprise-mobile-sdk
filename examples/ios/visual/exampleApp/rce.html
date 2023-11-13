@@ -1,0 +1,79 @@
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+      <style>
+        @keyframes lf-loading-spinner {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        .lf-loading-spinner {
+          animation: lf-loading-spinner 1250ms infinite linear;
+          border: 4px solid #4285F4;
+          border-radius: 32px;
+          border-right-color: transparent;
+          border-top-color: transparent;
+          box-sizing: border-box;
+          height: 64px;
+          width: 64px;
+        }
+      </style>
+      <style>
+        html,
+        body,
+        .container {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          background-color: transparent;
+        }
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      </style>
+      <title>reCAPTCHA</title>
+      <script
+        src="https://www.google.com/recaptcha/api.js?onload=onLoad&render=explicit__LANG__"
+        async
+        defer
+        ></script>
+      <script type="text/javascript">
+        const onVerify = (token) => {
+          window.webkit.messageHandlers.onVerify.postMessage({
+            "token": token
+          });
+        };
+        const onError = (error) => {
+          window.webkit.messageHandlers.onError.postMessage({
+            "error": error
+          });
+        };
+        const onExpire = () => {
+          window.webkit.messageHandlers.onExpire.postMessage({ });
+        };
+        var onLoad = () => {
+          document.getElementById("spinner").style.display='none';
+          const recaptchaParams = {
+            'sitekey': "__SITE_KEY__",
+            'callback': onVerify,
+            'error-callback': onError,
+            'expired-callback': onExpire,
+          };
+          window.grecaptcha.render("recaptcha-container", recaptchaParams);
+          window.webkit.messageHandlers.onLoad.postMessage({ });
+        };
+      </script>
+    </head>
+    <body>
+      <div class="container">
+        <div id="spinner" class="lf-loading-spinner"></div>
+        <span id="recaptcha-container"></span>
+      </div>
+    </body>
+</html>

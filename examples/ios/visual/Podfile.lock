@@ -1,0 +1,24 @@
+PODS:
+  - EarlGreyApp (2.2.2)
+  - EarlGreyTest (2.2.2):
+    - eDistantObject (= 1.0.2)
+  - eDistantObject (1.0.2)
+
+DEPENDENCIES:
+  - EarlGreyApp
+  - EarlGreyTest
+
+SPEC REPOS:
+  trunk:
+    - EarlGreyApp
+    - EarlGreyTest
+    - eDistantObject
+
+SPEC CHECKSUMS:
+  EarlGreyApp: 567870ba706a43d6a71024a71cb632fdaab8fe64
+  EarlGreyTest: c218fa3946fcf0c762c8b1bcc46445680639e1d5
+  eDistantObject: dab9b2c26f14684e32a4e0dc86759a77ea7a7026
+
+PODFILE CHECKSUM: 1fab90b2e13fdca59eeaa5305de5004922fa292c
+
+COCOAPODS: 1.12.1
