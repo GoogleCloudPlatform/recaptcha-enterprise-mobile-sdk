@@ -1,0 +1,6 @@
+#include "Pods/Target Support Files/Pods-exampleApp/Pods-exampleApp.debug.xcconfig"
+
+// Add your development reCAPTCHA site key here
+// Note that you have to escape url double slashes like this: http:/$()/localhost
+WEB_SITE_KEY = YOUR_PROD_SITE_KEY
+WEB_BASE_URL = YOUR_PROD_BASE_URL

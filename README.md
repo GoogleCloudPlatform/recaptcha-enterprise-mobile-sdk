@@ -10,8 +10,6 @@ To integrate reCAPTCHA Enterprise, please follow the instructions for
 and
 [Android](https://cloud.google.com/recaptcha-enterprise/docs/instrument-android-apps).
 
-## Troubleshoot
-
 ### Upgrading from 18.X.X to 18.2.0 in Android
 
 WARNING: Due to a bug described in
@@ -19,3 +17,19 @@ WARNING: Due to a bug described in
 some users may experience unrecoverable errors if you have used a version of the
 SDK < 18.2.0 and then upgrade to 18.2.0. Instead please upgrade directly to
 18.2.1.
+
+## Example Implementations
+
+# Basic
+
+The basic example applications demonstrate how to implement the reCAPTCHA
+Enterprise score-based challenges in mobile applications. These implementations
+demonstrate best practices with init started at app startup, retries, and
+waiting for network connectivity.
+
+# Visual
+
+The visual example applications demonstrate how to incorporate visual challenges
+into a mobile application using a webview.
+
+## Troubleshoot

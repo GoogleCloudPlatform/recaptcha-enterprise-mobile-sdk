@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		214BD03C2A968E020010C78D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214BD03B2A968E020010C78D /* ViewController.swift */; };
+		214BD0412A968E040010C78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214BD0402A968E040010C78D /* Assets.xcassets */; };
+		214BD04E2A968E420010C78D /* RecaptchaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214BD04D2A968E420010C78D /* RecaptchaUtils.swift */; };
+		214BD0512A968E6C0010C78D /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BD0502A968E6C0010C78D /* dummy.m */; };
+		7B597B832AE6EFC200792F7A /* RecaptchaEnterprise in Frameworks */ = {isa = PBXBuildFile; productRef = 7B597B822AE6EFC200792F7A /* RecaptchaEnterprise */; };
+		7B597B852AE6F04200792F7A /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B597B842AE6F04200792F7A /* NetworkUtils.swift */; };
+		7B597B892AE759E800792F7A /* TaskRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B597B882AE759E800792F7A /* TaskRetry.swift */; };
+		7B597B8B2AE7699100792F7A /* RecaptchaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B597B8A2AE7699100792F7A /* RecaptchaConstants.swift */; };
+		7B597B912AE8090D00792F7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B597B902AE8090D00792F7A /* AppDelegate.swift */; };
+		7B597B932AE8093500792F7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B597B922AE8093500792F7A /* Main.storyboard */; };
+		7B597B952AE8095000792F7A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B597B942AE8095000792F7A /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		214BD0342A968E020010C78D /* exampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		214BD03B2A968E020010C78D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		214BD0402A968E040010C78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		214BD0452A968E040010C78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		214BD04D2A968E420010C78D /* RecaptchaUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecaptchaUtils.swift; sourceTree = "<group>"; };
+		214BD04F2A968E6B0010C78D /* exampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "exampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		214BD0502A968E6C0010C78D /* dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
+		7B597B842AE6F04200792F7A /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		7B597B882AE759E800792F7A /* TaskRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRetry.swift; sourceTree = "<group>"; };
+		7B597B8A2AE7699100792F7A /* RecaptchaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecaptchaConstants.swift; sourceTree = "<group>"; };
+		7B597B902AE8090D00792F7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7B597B922AE8093500792F7A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7B597B942AE8095000792F7A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7B597B962AE81B9D00792F7A /* DebugSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugSettings.xcconfig; sourceTree = "<group>"; };
+		7B597B972AE81BB800792F7A /* DebugSettingsSample.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugSettingsSample.xcconfig; sourceTree = "<group>"; };
+		7B597B982AE81BCC00792F7A /* ReleaseSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseSettings.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		214BD0312A968E020010C78D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B597B832AE6EFC200792F7A /* RecaptchaEnterprise in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		214BD02B2A968E020010C78D = {
+			isa = PBXGroup;
+			children = (
+				7B597B982AE81BCC00792F7A /* ReleaseSettings.xcconfig */,
+				7B597B972AE81BB800792F7A /* DebugSettingsSample.xcconfig */,
+				7B597B962AE81B9D00792F7A /* DebugSettings.xcconfig */,
+				214BD0362A968E020010C78D /* exampleApp */,
+				214BD0352A968E020010C78D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		214BD0352A968E020010C78D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				214BD0342A968E020010C78D /* exampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		214BD0362A968E020010C78D /* exampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				214BD03B2A968E020010C78D /* ViewController.swift */,
+				214BD0402A968E040010C78D /* Assets.xcassets */,
+				214BD0452A968E040010C78D /* Info.plist */,
+				214BD04D2A968E420010C78D /* RecaptchaUtils.swift */,
+				7B597B8A2AE7699100792F7A /* RecaptchaConstants.swift */,
+				7B597B882AE759E800792F7A /* TaskRetry.swift */,
+				214BD0502A968E6C0010C78D /* dummy.m */,
+				214BD04F2A968E6B0010C78D /* exampleApp-Bridging-Header.h */,
+				7B597B842AE6F04200792F7A /* NetworkUtils.swift */,
+				7B597B902AE8090D00792F7A /* AppDelegate.swift */,
+				7B597B942AE8095000792F7A /* Launch Screen.storyboard */,
+				7B597B922AE8093500792F7A /* Main.storyboard */,
+			);
+			path = exampleApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		214BD0332A968E020010C78D /* exampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 214BD0482A968E040010C78D /* Build configuration list for PBXNativeTarget "exampleApp" */;
+			buildPhases = (
+				214BD0302A968E020010C78D /* Sources */,
+				214BD0312A968E020010C78D /* Frameworks */,
+				214BD0322A968E020010C78D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = exampleApp;
+			packageProductDependencies = (
+				7B597B822AE6EFC200792F7A /* RecaptchaEnterprise */,
+			);
+			productName = exampleApp;
+			productReference = 214BD0342A968E020010C78D /* exampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		214BD02C2A968E020010C78D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					214BD0332A968E020010C78D = {
+						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
+					};
+				};
+			};
+			buildConfigurationList = 214BD02F2A968E020010C78D /* Build configuration list for PBXProject "exampleApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 214BD02B2A968E020010C78D;
+			packageReferences = (
+				7B597B812AE6EFC200792F7A /* XCRemoteSwiftPackageReference "recaptcha-enterprise-mobile-sdk" */,
+			);
+			productRefGroup = 214BD0352A968E020010C78D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				214BD0332A968E020010C78D /* exampleApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		214BD0322A968E020010C78D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B597B952AE8095000792F7A /* Launch Screen.storyboard in Resources */,
+				214BD0412A968E040010C78D /* Assets.xcassets in Resources */,
+				7B597B932AE8093500792F7A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		214BD0302A968E020010C78D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B597B892AE759E800792F7A /* TaskRetry.swift in Sources */,
+				214BD04E2A968E420010C78D /* RecaptchaUtils.swift in Sources */,
+				214BD03C2A968E020010C78D /* ViewController.swift in Sources */,
+				7B597B8B2AE7699100792F7A /* RecaptchaConstants.swift in Sources */,
+				7B597B912AE8090D00792F7A /* AppDelegate.swift in Sources */,
+				7B597B852AE6F04200792F7A /* NetworkUtils.swift in Sources */,
+				214BD0512A968E6C0010C78D /* dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		214BD0462A968E040010C78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		214BD0472A968E040010C78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		214BD0492A968E040010C78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B597B962AE81B9D00792F7A /* DebugSettings.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = EQHXZ8M8AV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = exampleApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.recaptcha.ios.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Google Development";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "exampleApp/exampleApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		214BD04A2A968E040010C78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B597B982AE81BCC00792F7A /* ReleaseSettings.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = EQHXZ8M8AV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = exampleApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.recaptcha.ios.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Google Development";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "exampleApp/exampleApp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		214BD02F2A968E020010C78D /* Build configuration list for PBXProject "exampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				214BD0462A968E040010C78D /* Debug */,
+				214BD0472A968E040010C78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		214BD0482A968E040010C78D /* Build configuration list for PBXNativeTarget "exampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				214BD0492A968E040010C78D /* Debug */,
+				214BD04A2A968E040010C78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B597B812AE6EFC200792F7A /* XCRemoteSwiftPackageReference "recaptcha-enterprise-mobile-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GoogleCloudPlatform/recaptcha-enterprise-mobile-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 18.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B597B822AE6EFC200792F7A /* RecaptchaEnterprise */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B597B812AE6EFC200792F7A /* XCRemoteSwiftPackageReference "recaptcha-enterprise-mobile-sdk" */;
+			productName = RecaptchaEnterprise;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 214BD02C2A968E020010C78D /* Project object */;
+}
