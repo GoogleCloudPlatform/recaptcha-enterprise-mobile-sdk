@@ -11,7 +11,7 @@ Make sure you create a *website* key to utilize visual challenges and *not and
 Android or iOS Key*. Create a checkbox challenge key and set the difficulty to
 medium or higher.
 
-Run `pod install`` to install the pods for testing.
+Run `pod install` to install the pods for testing.
 
 ### Dev site keys
 
