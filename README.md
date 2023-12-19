@@ -10,6 +10,10 @@ To integrate reCAPTCHA Enterprise, please follow the instructions for
 and
 [Android](https://cloud.google.com/recaptcha-enterprise/docs/instrument-android-apps).
 
+### Security Vulnerability in SDKs Below 18.4.0
+
+A critical security vulnerability was discovered in reCAPTCHA Enterprise for Mobile. The vulnerability has been patched in the latest SDK release. Customers will need to update their Android application with the reCAPTCHA Enterprise for Mobile SDK, version 18.4.0 or above. We strongly recommend you update to the latest version as soon as possible.
+
 ### Upgrading from 18.X.X to 18.2.0 in Android
 
 WARNING: Due to a bug described in

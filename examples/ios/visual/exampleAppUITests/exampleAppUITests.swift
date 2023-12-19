@@ -11,7 +11,7 @@ final class exampleAppUITests: XCTestCase {
   }
 
   func pressLogin() {
-    EarlGrey.selectElement(with: grey_accessibilityID("loginButton"))
+    EarlGrey.selectElement(with: GREYAccessibilityID("loginButton"))
       .perform(grey_tap())
   }
 
@@ -20,7 +20,7 @@ final class exampleAppUITests: XCTestCase {
 
     let jsResult: EDORemoteVariable<NSString> = EDORemoteVariable()
     let sendToken = "document.querySelector('#recaptcha-container div') ? 'true' : 'false'"
-    EarlGrey.selectElement(with: grey_accessibilityID("RCWKWebView")).perform(
+    EarlGrey.selectElement(with: GREYAccessibilityID("RCWKWebView")).perform(
       grey_javaScriptExecution(sendToken, jsResult))
     XCTAssertEqual(jsResult.object, "true")
   }
@@ -32,11 +32,11 @@ final class exampleAppUITests: XCTestCase {
 
     let sendToken =
       "window.webkit.messageHandlers.onVerify.postMessage({'token': 'FAKE TOKEN'}); 'true';"
-    EarlGrey.selectElement(with: grey_accessibilityID("RCWKWebView")).perform(
+    EarlGrey.selectElement(with: GREYAccessibilityID("RCWKWebView")).perform(
       grey_javaScriptExecution(sendToken, jsResult))
     XCTAssertEqual(jsResult.object, "true")
 
-    EarlGrey.selectElement(with: grey_accessibilityID("RCToken")).assert(grey_text("FAKE TOKEN"))
+    EarlGrey.selectElement(with: GREYAccessibilityID("RCToken")).assert(grey_text("FAKE TOKEN"))
   }
 
   func testOnError() {
@@ -46,10 +46,10 @@ final class exampleAppUITests: XCTestCase {
 
     let sendToken =
       "window.webkit.messageHandlers.onError.postMessage({'error': 'AN ERROR'}); 'true';"
-    EarlGrey.selectElement(with: grey_accessibilityID("RCWKWebView")).perform(
+    EarlGrey.selectElement(with: GREYAccessibilityID("RCWKWebView")).perform(
       grey_javaScriptExecution(sendToken, jsResult))
     XCTAssertEqual(jsResult.object, "true")
 
-    EarlGrey.selectElement(with: grey_accessibilityID("RCToken")).assert(grey_text("AN ERROR"))
+    EarlGrey.selectElement(with: GREYAccessibilityID("RCToken")).assert(grey_text("AN ERROR"))
   }
 }
