@@ -51,6 +51,30 @@ body:
         - GMaven (Android)
     validations:
       required: true
+  - type: dropdown
+    id: language-used
+    attributes:
+      label: Select all languages that are being used in the implementation.
+      multiple: true
+      options:
+        - Swift (iOS)
+        - ObjC (iOS)
+        - Java (Android)
+        - Kotlin (Android)
+      validations:
+        required: true
+  - type: dropdown
+    id: ui-framework-used
+    attributes:
+      label: What are the UI frameworks used in the app development?
+      multiple: true
+      options:
+        - SwiftUI (iOS)
+        - UIKit (iOS)
+        - Jetpack Compose (Android)
+        - Activity/Fragment (Android)
+      validations:
+      required: false
   - type: input
     id: sdk-version
     attributes:
