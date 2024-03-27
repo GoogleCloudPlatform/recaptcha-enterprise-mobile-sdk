@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">RecaptchaDemo</string>
+  <string name="login_title">Recaptcha Demo</string>
+
+  <string name="username_label">Username</string>
+  <string name="password_label">Password</string>
+  <string name="btn_login_str">Login</string>
+
+  <string name="welcome_label">Welcome to reCaptcha!</string>
+</resources>
