@@ -1,3 +1,17 @@
+#  Copyright 2022 Google LLC
+# 
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+# 
+#      https:# www.apache.org/licenses/LICENSE-2.0
+# 
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 import cgi
@@ -9,15 +23,14 @@ DEFAULT_HOST_NAME = "localhost"
 DEFAULT_SERVER_PORT = 8080
 USER_GUARD_CLOUD_PROJECT_NUMBER = "USER_GUARD_CLOUD_PROJECT_NUMBER"
 USER_GUARD_API_KEY = "USER_GUARD_API_KEY"
-SITE_KEY = "SITE_KEY"
 
-USER_GUARD_FULL_URL = f"https://recaptchaenterprise.googleapis.com/v1/projects/{USER_GUARD_CLOUD_PROJECT_NUMBER}/assessments?key={USER_GUARD_API_KEY}"
+USER_GUARD_FULL_URL = f"https:# recaptchaenterprise.googleapis.com/v1/projects/{USER_GUARD_CLOUD_PROJECT_NUMBER}/assessments?key={USER_GUARD_API_KEY}"
 
 class DemoServer(BaseHTTPRequestHandler):
 
-    def _fetch_assessment(self, token: str) -> dict:
+    def _fetch_assessment(self, token: str, site_key: str) -> dict:
         response = requests.post(USER_GUARD_FULL_URL,
-            json = {'event': {'token':token, 'siteKey': SITE_KEY}},
+            json = {'event': {'token':token, 'siteKey': site_key}},
         )
         json_response = json.loads(response.text)
         return json_response
@@ -42,10 +55,10 @@ class DemoServer(BaseHTTPRequestHandler):
             content = json.loads(self.rfile.read(length))
             print(f"Received request: {json.dumps(content, indent=4)}")
             
-            assessment = self._fetch_assessment(content['token'])
+            assessment = self._fetch_assessment(content['token'], content['siteKey'])
             print(f"Retrieved assessment: {json.dumps(assessment, indent=4)}")
 
-            response = json.dumps({'should_block': self._should_block(assessment['riskAnalysis']['score'])})
+            response = json.dumps({'shouldBlock': self._should_block(assessment['riskAnalysis']['score'])})
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
@@ -54,7 +67,7 @@ class DemoServer(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":        
     webServer = HTTPServer((DEFAULT_HOST_NAME, DEFAULT_SERVER_PORT), DemoServer)
-    print(f"Server started http://{DEFAULT_HOST_NAME}:{DEFAULT_SERVER_PORT}")
+    print(f"Server started http:# {DEFAULT_HOST_NAME}:{DEFAULT_SERVER_PORT}")
 
     try:
         webServer.serve_forever()

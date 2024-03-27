@@ -12,14 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.example.sample
+import SwiftUI
 
-import android.app.Application
-import android.security.NetworkSecurityPolicy
-
-class RecaptchaApplication: Application() {
-  override fun onCreate() {
-    super.onCreate()
-    RecaptchaRepository.initializeClient(this)
-  }
+@main
+struct RecaptchaDemoApp: App {
+    
+    init(){
+        RecaptchaRepository.initRecaptcha()
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
 }

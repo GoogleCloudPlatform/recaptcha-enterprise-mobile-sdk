@@ -12,14 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.example.sample
+import SwiftUI
 
-import android.app.Application
-import android.security.NetworkSecurityPolicy
+struct HomeView: View {
+    
+    @State
+    private var loginViewModel: LoginViewModel
+    
+    init(_ loginViewModel: LoginViewModel){
+        self.loginViewModel = loginViewModel
+    }
+    
+    var body: some View {
+        Text("Welcome to reCaptcha!").font(.system(size: 30))
+        Text(loginViewModel.username)
+    }
+}
 
-class RecaptchaApplication: Application() {
-  override fun onCreate() {
-    super.onCreate()
-    RecaptchaRepository.initializeClient(this)
-  }
+#Preview {
+    HomeView(LoginViewModel())
 }
