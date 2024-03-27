@@ -1,6 +1,6 @@
 # Demo Recaptcha Server
 
-This folder holds the local server used to demo an integration with reCaptcha mobile
+This folder holds the local server used to demo an integration with reCAPTCHA mobile
 and a local running server.
 
 ## Install dependencies
