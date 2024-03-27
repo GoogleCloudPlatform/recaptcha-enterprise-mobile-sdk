@@ -24,7 +24,7 @@ DEFAULT_SERVER_PORT = 8080
 USER_GUARD_CLOUD_PROJECT_NUMBER = "USER_GUARD_CLOUD_PROJECT_NUMBER"
 USER_GUARD_API_KEY = "USER_GUARD_API_KEY"
 
-USER_GUARD_FULL_URL = f"https:# recaptchaenterprise.googleapis.com/v1/projects/{USER_GUARD_CLOUD_PROJECT_NUMBER}/assessments?key={USER_GUARD_API_KEY}"
+USER_GUARD_FULL_URL = f"https://recaptchaenterprise.googleapis.com/v1/projects/{USER_GUARD_CLOUD_PROJECT_NUMBER}/assessments?key={USER_GUARD_API_KEY}"
 
 class DemoServer(BaseHTTPRequestHandler):
 
