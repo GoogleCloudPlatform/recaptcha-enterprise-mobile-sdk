@@ -21,15 +21,15 @@ import requests
 
 DEFAULT_HOST_NAME = "localhost"
 DEFAULT_SERVER_PORT = 8080
-USER_GUARD_CLOUD_PROJECT_NUMBER = "USER_GUARD_CLOUD_PROJECT_NUMBER"
-USER_GUARD_API_KEY = "USER_GUARD_API_KEY"
+CLOUD_PROJECT_NUMBER = "CLOUD_PROJECT_NUMBER"
+API_KEY = "API_KEY"
 
-USER_GUARD_FULL_URL = f"https://recaptchaenterprise.googleapis.com/v1/projects/{USER_GUARD_CLOUD_PROJECT_NUMBER}/assessments?key={USER_GUARD_API_KEY}"
+RECAPTCHA_FULL_URL = f"https://recaptchaenterprise.googleapis.com/v1/projects/{CLOUD_PROJECT_NUMBER}/assessments?key={API_KEY}"
 
 class DemoServer(BaseHTTPRequestHandler):
 
     def _fetch_assessment(self, token: str, site_key: str) -> dict:
-        response = requests.post(USER_GUARD_FULL_URL,
+        response = requests.post(RECAPTCHA_FULL_URL,
             json = {'event': {'token':token, 'siteKey': site_key}},
         )
         json_response = json.loads(response.text)

@@ -13,7 +13,7 @@ pip3 install -r requirements.txt
 
 ## How to use it
 
-Change the value of the fields `USER_GUARD_CLOUD_PROJECT_NUMBER` and `USER_GUARD_API_KEY` with
+Change the value of the fields `CLOUD_PROJECT_NUMBER` and `API_KEY` with
 the ones that that you will be used for retrieving assessments.
 
 After all changes run:
