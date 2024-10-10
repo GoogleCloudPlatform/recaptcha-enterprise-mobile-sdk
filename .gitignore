@@ -15,3 +15,15 @@ Utilities/Docker/*.tar.gz
 /build
 *.pyc
 .docc-build
+,
+
+# Gradle files
+.gradle/
+build/
+
+# IntelliJ
+*.iml
+.idea/
+
+# Local configuration
+local.properties
