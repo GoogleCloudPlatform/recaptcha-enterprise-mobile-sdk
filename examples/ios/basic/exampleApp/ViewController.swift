@@ -119,20 +119,14 @@ class ViewController: UIViewController {
   private func callInit(withSiteKey siteKey: String) {
     self.setResultLabel("Initializing client ...")
 
-    Recaptcha.getClientWithRetry(
-      withSiteKey: siteKey,
-      completion: { client, error in
-        DispatchQueue.main.async {
-          guard let client = client else {
-            self.handleResult(
-              "Init failed!", withLogMessage: "Error: \(String(describing:error?.errorMessage))")
-            return
-          }
-
-          self.recaptchaClient = client
-          self.handleResult("Init was successful")
-        }
-      })
+    Recaptcha.fetchClient(withSiteKey: siteKey) { client, error in
+      guard let client = client else {
+        self.handleResult(
+          "Init failed!", withLogMessage: "Error: \(String(describing:error))")
+                return
+      }
+      self.recaptchaClient = client
+    }
   }
 
   private func callExecute() {
@@ -141,18 +135,15 @@ class ViewController: UIViewController {
       return
     }
     self.setResultLabel("Executing Login action ...")
-    Recaptcha.executeWithRetry(withClient: recaptchaClient, withAction: RecaptchaAction.login) {
-      token, error in
-      DispatchQueue.main.async {
-        guard let unwrappedToken = token else {
-          self.handleResult(
-            "Execute failed!", withLogMessage: "Error: \(String(describing:error?.errorMessage))")
-          return
-        }
-
-        self.recaptchaToken = unwrappedToken
+    recaptchaClient.execute(withAction: RecaptchaAction.login) { token, error in
+      if let token = token {
+        self.recaptchaToken = token
         self.handleResult(
-          "Token received", withLogMessage: unwrappedToken)
+          "Token received", withLogMessage: token)
+      } else {
+        self.handleResult(
+          "Execute failed!", withLogMessage: "Error: \(String(describing:error))")
+        return
       }
     }
   }
@@ -161,16 +152,18 @@ class ViewController: UIViewController {
   private func callInitAsync(withSiteKey siteKey: String) async {
     self.setResultLabel("Initializing client ...")
 
-    do {
-      self.recaptchaClient = try await Recaptcha.getClientWithRetryAsync(withSiteKey: siteKey)
-      self.handleResult("Init was successful")
-    } catch let error as RecaptchaError {
-      self.handleResult(
-        "Init failed!", withLogMessage: "Error: \(String(describing:error.errorMessage))")
-    } catch let error {
-      self.handleResult(
-        "Init failed!", withLogMessage: "Error: \(error.localizedDescription)")
-    }
+    Task {
+          do {
+            self.recaptchaClient = try await Recaptcha.fetchClient(withSiteKey: siteKey)
+            self.handleResult("Init was successful")
+          } catch let error as RecaptchaError {
+            self.handleResult(
+              "Init failed!", withLogMessage: "Error: \(String(describing:error.errorMessage))")
+          } catch let error {
+            self.handleResult(
+              "Init failed!", withLogMessage: "Error: \(error.localizedDescription)")
+          }
+        }
   }
 
   @available(iOS 13.0, *)
@@ -180,9 +173,10 @@ class ViewController: UIViewController {
       return
     }
     self.setResultLabel("Executing Login action ...")
+  
     do {
-      self.recaptchaToken = try await Recaptcha.executeWithRetryAsync(
-        withClient: recaptchaClient, withAction: RecaptchaAction.login)
+      self.recaptchaToken = try await recaptchaClient.execute(
+        withAction: RecaptchaAction.login)
       self.handleResult(
         "Token received", withLogMessage: self.recaptchaToken)
     } catch let error as RecaptchaError {
