@@ -33,21 +33,17 @@ import kotlinx.coroutines.launch
  */
 object RecaptchaRepository {
 
-  private lateinit var recaptchaClient: Deferred<Result<RecaptchaClient>>
+  private lateinit var recaptchaClient: RecaptchaClient
 
   const val SITE_KEY = "SITE_KEY"
 
   fun initializeClient(context: Context) {
     CoroutineScope(Dispatchers.IO).launch {
-      recaptchaClient = async {
-        Recaptcha.getClient(context.applicationContext as Application, SITE_KEY)
-      }
+      recaptchaClient = Recaptcha.fetchClient(context.applicationContext as Application, SITE_KEY)
     }
   }
 
   suspend fun retrieveToken(action: RecaptchaAction): Result<String> {
-   return recaptchaClient.await().map {
-     it.execute(action).getOrThrow()
-    }
+   return recaptchaClient.execute(action)
   }
 }
