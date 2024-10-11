@@ -1,0 +1,24 @@
+{
+  "originHash" : "96a660ee2749df27ed51bcd4228c4e3b8c3932f66c3a3fdea3e02a6e6d284a4a",
+  "pins" : [
+    {
+      "identity" : "interop-ios-for-google-sdks",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/interop-ios-for-google-sdks.git",
+      "state" : {
+        "revision" : "2d12673670417654f08f5f90fdd62926dc3a2648",
+        "version" : "100.0.0"
+      }
+    },
+    {
+      "identity" : "recaptcha-enterprise-mobile-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GoogleCloudPlatform/recaptcha-enterprise-mobile-sdk",
+      "state" : {
+        "revision" : "e1890d87d0aa0780baa38f46bf09db3630bd0beb",
+        "version" : "18.6.0"
+      }
+    }
+  ],
+  "version" : 3
+}

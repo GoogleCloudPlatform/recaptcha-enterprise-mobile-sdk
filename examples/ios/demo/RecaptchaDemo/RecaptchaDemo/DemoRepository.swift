@@ -30,11 +30,14 @@ enum DemoRepository {
                     throw DemoRepositoryError.unableToCreateUrl
                 }
                 
+                let siteKey: String =
+                  Bundle.main.object(forInfoDictionaryKey: "SITE_KEY") as? String ?? "NO SITEKEY"
+              
                 let json = [
                     "username": username,
                     "password": password,
                     "token": token,
-                    "siteKey": RecaptchaRepository.siteKey,
+                    "siteKey": siteKey,
                 ]
                 
                 let jsonData = try JSONEncoder().encode(json)
