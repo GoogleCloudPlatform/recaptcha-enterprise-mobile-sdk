@@ -15,8 +15,10 @@
 package com.google.recaptcha.sample
 
 import android.app.Application
+import com.google.android.recaptcha.Recaptcha
 import com.google.android.recaptcha.RecaptchaAction
 import com.google.android.recaptcha.RecaptchaClient
+import com.google.android.recaptcha.RecaptchaException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -30,42 +32,35 @@ import kotlinx.coroutines.withContext
  */
 object RecaptchaProvider {
 
-  private lateinit var recaptchaClient: Deferred<RecaptchaClient>
+  private lateinit var recaptchaClient: RecaptchaClient
   private const val SITE_KEY = BuildConfig.SITE_KEY
 
   /**
    * Trigger the initialization of the RecaptchaClient in the IO scope.
    *
-   * This method already uses the method [RecaptchaUtils.getClientWithRetry] to leverage retry
-   * implementation with backoff.
-   *
    * @param application The Application context.
    */
   fun initRecaptcha(application: Application) {
-    recaptchaClient =
+    try {
       CoroutineScope(Dispatchers.IO).async {
-        RecaptchaUtils.getClientWithRetry(application, SITE_KEY).getOrThrow()
+        recaptchaClient = Recaptcha.fetchClient(application, SITE_KEY)
       }
+    } catch(exception: RecaptchaException){
+      RecaptchaUtils.logDebug("Encountered error in fetchClient")
+      RecaptchaUtils.logDebug(exception.errorMessage)
+    }
   }
 
   /**
    * Executes the action in the RecaptchaClient that was initialized using the [initRecaptcha]
    * method.
    *
-   * It also leverage retry implementation with backoff.
-   *
-   * @param application The Application context.
    * @param action The action that will be protected using Recaptcha.
    * @return A Result containing the Token that will be sent to the backend for assessment
    *  retrieval.
    */
-  suspend fun executeAction(application: Application, action: RecaptchaAction): Result<String> =
+  suspend fun executeAction(action: RecaptchaAction): Result<String> =
     withContext(Dispatchers.IO) {
-      if (!RecaptchaProvider::recaptchaClient.isInitialized) {
-        Result.failure(Exception("Recaptcha Client not initialized"))
-      } else {
-        val client = recaptchaClient.await()
-        RecaptchaUtils.executeWithRetry(application, client, action)
+        recaptchaClient.execute(action)
       }
     }
-}

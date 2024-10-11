@@ -30,6 +30,7 @@ class LoginViewModel {
                 let tokenResult = await RecaptchaRepository.getToken(action:.login)
                 switch tokenResult {
                 case .success(let token):
+                    print("TOKEN: " + token)
                     let response = try await DemoRepository.login(self.username, self.password, token)
                     self.isLogged = response
                 case .failure(let failure):

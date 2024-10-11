@@ -1,7 +1,7 @@
 .build
 DerivedData
 /.previous-build
-xcuserdata
+xcuserdata/
 .DS_Store
 *~
 \#*
@@ -9,9 +9,19 @@ xcuserdata
 .*.sw[nop]
 *.xcscmblueprint
 /default.profraw
-*.xcodeproj
 Utilities/Docker/*.tar.gz
 .swiftpm
 /build
 *.pyc
 .docc-build
+
+# Gradle files
+.gradle/
+build/
+
+# IntelliJ
+*.iml
+.idea/
+
+# Local configuration
+local.properties

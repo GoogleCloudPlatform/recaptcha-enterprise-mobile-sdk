@@ -9,12 +9,7 @@
 /* Begin PBXBuildFile section */
 		214BD03C2A968E020010C78D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214BD03B2A968E020010C78D /* ViewController.swift */; };
 		214BD0412A968E040010C78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214BD0402A968E040010C78D /* Assets.xcassets */; };
-		214BD04E2A968E420010C78D /* RecaptchaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214BD04D2A968E420010C78D /* RecaptchaUtils.swift */; };
-		214BD0512A968E6C0010C78D /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BD0502A968E6C0010C78D /* dummy.m */; };
 		7B597B832AE6EFC200792F7A /* RecaptchaEnterprise in Frameworks */ = {isa = PBXBuildFile; productRef = 7B597B822AE6EFC200792F7A /* RecaptchaEnterprise */; };
-		7B597B852AE6F04200792F7A /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B597B842AE6F04200792F7A /* NetworkUtils.swift */; };
-		7B597B892AE759E800792F7A /* TaskRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B597B882AE759E800792F7A /* TaskRetry.swift */; };
-		7B597B8B2AE7699100792F7A /* RecaptchaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B597B8A2AE7699100792F7A /* RecaptchaConstants.swift */; };
 		7B597B912AE8090D00792F7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B597B902AE8090D00792F7A /* AppDelegate.swift */; };
 		7B597B932AE8093500792F7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B597B922AE8093500792F7A /* Main.storyboard */; };
 		7B597B952AE8095000792F7A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B597B942AE8095000792F7A /* Launch Screen.storyboard */; };
@@ -25,12 +20,6 @@
 		214BD03B2A968E020010C78D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		214BD0402A968E040010C78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		214BD0452A968E040010C78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		214BD04D2A968E420010C78D /* RecaptchaUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecaptchaUtils.swift; sourceTree = "<group>"; };
-		214BD04F2A968E6B0010C78D /* exampleApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "exampleApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		214BD0502A968E6C0010C78D /* dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
-		7B597B842AE6F04200792F7A /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
-		7B597B882AE759E800792F7A /* TaskRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRetry.swift; sourceTree = "<group>"; };
-		7B597B8A2AE7699100792F7A /* RecaptchaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecaptchaConstants.swift; sourceTree = "<group>"; };
 		7B597B902AE8090D00792F7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B597B922AE8093500792F7A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7B597B942AE8095000792F7A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -76,12 +65,6 @@
 				214BD03B2A968E020010C78D /* ViewController.swift */,
 				214BD0402A968E040010C78D /* Assets.xcassets */,
 				214BD0452A968E040010C78D /* Info.plist */,
-				214BD04D2A968E420010C78D /* RecaptchaUtils.swift */,
-				7B597B8A2AE7699100792F7A /* RecaptchaConstants.swift */,
-				7B597B882AE759E800792F7A /* TaskRetry.swift */,
-				214BD0502A968E6C0010C78D /* dummy.m */,
-				214BD04F2A968E6B0010C78D /* exampleApp-Bridging-Header.h */,
-				7B597B842AE6F04200792F7A /* NetworkUtils.swift */,
 				7B597B902AE8090D00792F7A /* AppDelegate.swift */,
 				7B597B942AE8095000792F7A /* Launch Screen.storyboard */,
 				7B597B922AE8093500792F7A /* Main.storyboard */,
@@ -167,13 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B597B892AE759E800792F7A /* TaskRetry.swift in Sources */,
-				214BD04E2A968E420010C78D /* RecaptchaUtils.swift in Sources */,
 				214BD03C2A968E020010C78D /* ViewController.swift in Sources */,
-				7B597B8B2AE7699100792F7A /* RecaptchaConstants.swift in Sources */,
 				7B597B912AE8090D00792F7A /* AppDelegate.swift in Sources */,
-				7B597B852AE6F04200792F7A /* NetworkUtils.swift in Sources */,
-				214BD0512A968E6C0010C78D /* dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +304,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Google Development";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "exampleApp/exampleApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -365,7 +343,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Google Development";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "exampleApp/exampleApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

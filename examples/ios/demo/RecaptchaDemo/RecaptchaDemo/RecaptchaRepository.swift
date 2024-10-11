@@ -20,27 +20,32 @@ enum RecaptchaRepositoryError: Error {
 }
 
 enum RecaptchaRepository {
-    
-    static let siteKey: String = "SITE_KEY"
-    
-    static private var recaptchaClient: Result<RecaptchaClient,Error>?
+    static private var recaptchaClient: RecaptchaClient?
     
     static func initRecaptcha(){
-        Task.detached {
-            do {
-                recaptchaClient = .success(try await Recaptcha.getClient(withSiteKey: siteKey))
-            } catch {
-                recaptchaClient = .failure(error)
-            }
+      let siteKey: String =
+        Bundle.main.object(forInfoDictionaryKey: "SITE_KEY") as? String ?? "NO SITEKEY"
+      
+      print("SiteKey: " +  siteKey)
+        
+      Recaptcha.fetchClient(withSiteKey: siteKey) { client, error in
+        guard let client = client else {
+          print("RecaptchaClient creation error: \(String(describing:error)).")
+          return
         }
+        self.recaptchaClient = client
+      }
     }
     
     static func getToken(action: RecaptchaAction) async -> Result<String,Error> {
         do {
-            guard let client = try recaptchaClient?.get() else {
+            guard let client = recaptchaClient else {
                 throw RecaptchaRepositoryError.recaptchaNotInitialzied
             }
             let token = try await client.execute(withAction: action) 
+
+            print("TOKEN: " + token)
+
             return .success(token)
         } catch {
             return .failure(error)
