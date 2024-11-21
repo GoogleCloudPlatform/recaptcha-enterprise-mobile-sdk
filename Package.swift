@@ -20,14 +20,18 @@ import PackageDescription
 let package = Package(
   name: "RecaptchaEnterprise",
   platforms: [
-    .iOS(.v11)
+    .iOS(.v12)
   ],
   products: [
     // Products define the executables and libraries a package produces, and make them visible to other packages.
     .library(
       name: "RecaptchaEnterprise",
-      targets: ["recaptcha-enterprise"]
-    )
+      targets: ["RecaptchaEnterprise"]
+    ),
+    .library(
+      name: "RecaptchaEnterprise+Interop",
+      targets: ["RecaptchaEnterprise+Interop"]
+    ),
   ],
   dependencies: [
     .package(
@@ -36,19 +40,18 @@ let package = Package(
     )
   ],
   targets: [
-    .target(
-      name: "recaptcha-enterprise",
-      dependencies: [
-        "RecaptchaEnterprise",
-        .product(name: "RecaptchaInterop", package: "interop-ios-for-google-sdks"),
-      ],
-      publicHeadersPath: "."
-    ),
     .binaryTarget(
       name: "RecaptchaEnterprise",
       url:
         "https://dl.google.com/recaptchaenterprise/v18.6.0/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
       checksum: "52c9eb4644f3bb60f172ac9621d5fd4b55a2084275d82384f352510fe2ca7c39"
+    ),
+    .target(
+      name: "RecaptchaEnterprise+Interop",
+      dependencies: [
+        .target(name: "RecaptchaEnterprise"),
+        .product(name: "RecaptchaInterop", package: "interop-ios-for-google-sdks"),
+      ]
     ),
   ]
 )
