@@ -28,28 +28,24 @@ let package = Package(
       name: "RecaptchaEnterprise",
       targets: ["RecaptchaEnterprise"]
     ),
-    .library(
-      name: "RecaptchaEnterprise+Interop",
-      targets: ["RecaptchaEnterprise+Interop"]
-    ),
   ],
   dependencies: [
     .package(
       url: "https://github.com/google/interop-ios-for-google-sdks.git",
-      "100.0.0"..<"101.0.0"
+      "101.0.0"..<"102.0.0"
     )
   ],
   targets: [
     .binaryTarget(
-      name: "RecaptchaEnterprise",
-      url:
-        "https://dl.google.com/recaptchaenterprise/v18.6.0/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
-      checksum: "52c9eb4644f3bb60f172ac9621d5fd4b55a2084275d82384f352510fe2ca7c39"
+      name: "RecaptchaEnterpriseSDK",
+     url:
+       "https://dl.google.com/recaptchaenterprise/v18.7.0-beta01/RecaptchaEnterpriseSDK_iOS_xcframework/recaptcha-sdk-xcframework.xcframework.zip",
+     checksum: "efd561df0e2af9c0646e871520c222f316c142800cc291a95d4f2e7a9e25c71b"
     ),
     .target(
-      name: "RecaptchaEnterprise+Interop",
+      name: "RecaptchaEnterprise",
       dependencies: [
-        .target(name: "RecaptchaEnterprise"),
+        .target(name: "RecaptchaEnterpriseSDK"),
         .product(name: "RecaptchaInterop", package: "interop-ios-for-google-sdks"),
       ]
     ),

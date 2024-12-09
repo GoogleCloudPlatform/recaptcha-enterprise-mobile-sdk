@@ -13,24 +13,24 @@
 // limitations under the License.
 
 import Foundation
-@_exported import RecaptchaInterop
-@_exported import RecaptchaEnterprise
+import RecaptchaInterop
+@_exported import RecaptchaEnterpriseSDK
 
 /// Interop class binding the RCAActionProtocol to the RecaptchaAction.
-@objc public class RCAAction: NSObject, RCAActionProtocol {
-  @objc public static var login: any RCAActionProtocol = RCAAction(customAction: "login")
+@objc class RCAAction: NSObject, RCAActionProtocol {
+  @objc static var login: any RCAActionProtocol = RCAAction(customAction: "login")
 
-  @objc public static var signup: any RCAActionProtocol = RCAAction(customAction: "signup")
+  @objc static var signup: any RCAActionProtocol = RCAAction(customAction: "signup")
 
-  public let action: String
+  let action: String
 
-  public required init(customAction: String) {
+  required init(customAction: String) {
     self.action = customAction
   }
 }
 
 /// Interop class binding the RCARecaptchaClientProtocol to the RecaptchaClient.
-@objc public class RCAClient: NSObject, RCARecaptchaClientProtocol {
+@objc class RCAClient: NSObject, RCARecaptchaClientProtocol {
 
   let client: RecaptchaClient
 
@@ -39,7 +39,7 @@ import Foundation
   }
 
   @objc
-  public func execute(
+  func execute(
     withAction action: any RCAActionProtocol, withTimeout timeout: Double,
     completion: @escaping (String?, (any Error)?) -> Void
   ) {
@@ -49,7 +49,7 @@ import Foundation
   }
 
   @objc
-  public func execute(
+  func execute(
     withAction action: any RCAActionProtocol, completion: @escaping (String?, (any Error)?) -> Void
   ) {
     client.execute(withAction: RecaptchaAction(customAction: action.action), completion: completion)
@@ -57,30 +57,16 @@ import Foundation
 }
 
 /// Interop class binding the RCARecaptchaProtocol to the Recaptcha.
-@objc public class RCARecaptcha: NSObject, RCARecaptchaProtocol {
+@objc class RCARecaptcha: NSObject, RCARecaptchaProtocol {
 
   required init(_ recaptcha: Recaptcha) {}
 
   @objc
-  public static func getClient(
-    withSiteKey siteKey: String, withTimeout timeout: Double,
-    completion: @escaping ((any RCARecaptchaClientProtocol)?, (any Error)?) -> Void
-  ) {
-    Recaptcha.getClient(withSiteKey: siteKey, withTimeout: timeout) { client, error in
-      var interopClient: RCAClient? = nil
-      if let unwrapClient = client {
-        interopClient = RCAClient(unwrapClient)
-      }
-      completion(interopClient, error)
-    }
-  }
-
-  @objc
-  public static func getClient(
+  static func fetchClient(
     withSiteKey siteKey: String,
     completion: @escaping ((any RCARecaptchaClientProtocol)?, (any Error)?) -> Void
   ) {
-    Recaptcha.getClient(withSiteKey: siteKey) { client, error in
+      Recaptcha.fetchClient(withSiteKey: siteKey) { client, error in
       var interopClient: RCAClient? = nil
       if let unwrapClient = client {
         interopClient = RCAClient(unwrapClient)
