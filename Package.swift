@@ -26,7 +26,7 @@ let package = Package(
     // Products define the executables and libraries a package produces, and make them visible to other packages.
     .library(
       name: "RecaptchaEnterprise",
-      targets: ["RecaptchaEnterprise"]
+      targets: ["RecaptchaEnterpriseWrapper"]
     ),
   ],
   dependencies: [
@@ -49,5 +49,13 @@ let package = Package(
         .product(name: "RecaptchaInterop", package: "interop-ios-for-google-sdks"),
       ]
     ),
+    .target(
+      name: "RecaptchaEnterpriseWrapper",
+      dependencies: [
+        "RecaptchaEnterprise"
+      ],
+      path: "Sources/Public",
+      publicHeadersPath: "."
+    )
   ]
 )

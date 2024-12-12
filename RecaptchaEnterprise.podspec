@@ -25,7 +25,13 @@ Pod::Spec.new do |s|
         :tag => 'CocoaPods-' + s.version.to_s
     }
 
-    s.source_files = 'Sources/RecaptchaEnterprise/*.swift'
+    s.public_header_files = 'Sources/Public/RecaptchaEnterprise/*.h'
+
+    s.source_files = [
+        'Sources/RecaptchaEnterprise/*.swift',
+        'Sources/Public/RecaptchaEnterprise/*.h',
+    ]
+    
     s.static_framework = true
     s.dependency 'RecaptchaInterop', '~> 101.0.0'
     s.dependency 'RecaptchaEnterpriseSDK', s.version.to_s
