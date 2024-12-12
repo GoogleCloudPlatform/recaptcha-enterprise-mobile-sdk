@@ -40,7 +40,7 @@ let package = Package(
       name: "RecaptchaEnterpriseSDK",
      url:
        "https://dl.google.com/recaptchaenterprise/v18.7.0-beta01/RecaptchaEnterpriseSDK_iOS_xcframework/recaptcha-sdk-xcframework.xcframework.zip",
-     checksum: "efd561df0e2af9c0646e871520c222f316c142800cc291a95d4f2e7a9e25c71b"
+     checksum: "170769f1ba86a0ce422a80f127cd4ffca999b360ad6fc3fcc394eb47e0d97d06"
     ),
     .target(
       name: "RecaptchaEnterprise",
