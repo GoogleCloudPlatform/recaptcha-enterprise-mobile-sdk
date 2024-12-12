@@ -20,35 +20,42 @@ import PackageDescription
 let package = Package(
   name: "RecaptchaEnterprise",
   platforms: [
-    .iOS(.v11)
+    .iOS(.v12)
   ],
   products: [
     // Products define the executables and libraries a package produces, and make them visible to other packages.
     .library(
       name: "RecaptchaEnterprise",
-      targets: ["recaptcha-enterprise"]
-    )
+      targets: ["RecaptchaEnterpriseWrapper"]
+    ),
   ],
   dependencies: [
     .package(
       url: "https://github.com/google/interop-ios-for-google-sdks.git",
-      "100.0.0"..<"101.0.0"
+      "101.0.0"..<"102.0.0"
     )
   ],
   targets: [
-    .target(
-      name: "recaptcha-enterprise",
-      dependencies: [
-        "RecaptchaEnterprise",
-        .product(name: "RecaptchaInterop", package: "interop-ios-for-google-sdks"),
-      ],
-      publicHeadersPath: "."
-    ),
     .binaryTarget(
-      name: "RecaptchaEnterprise",
-      url:
-        "https://dl.google.com/recaptchaenterprise/v18.6.0/RecaptchaEnterprise_iOS_xcframework/recaptcha-xcframework.xcframework.zip",
-      checksum: "52c9eb4644f3bb60f172ac9621d5fd4b55a2084275d82384f352510fe2ca7c39"
+      name: "RecaptchaEnterpriseSDK",
+     url:
+       "https://dl.google.com/recaptchaenterprise/v18.7.0-beta01/RecaptchaEnterpriseSDK_iOS_xcframework/recaptcha-sdk-xcframework.xcframework.zip",
+     checksum: "170769f1ba86a0ce422a80f127cd4ffca999b360ad6fc3fcc394eb47e0d97d06"
     ),
+    .target(
+      name: "RecaptchaEnterprise",
+      dependencies: [
+        .target(name: "RecaptchaEnterpriseSDK"),
+        .product(name: "RecaptchaInterop", package: "interop-ios-for-google-sdks"),
+      ]
+    ),
+    .target(
+      name: "RecaptchaEnterpriseWrapper",
+      dependencies: [
+        "RecaptchaEnterprise"
+      ],
+      path: "Sources/Public",
+      publicHeadersPath: "."
+    )
   ]
 )
