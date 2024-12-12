@@ -20,6 +20,10 @@ Pod::Spec.new do |s|
     s.homepage     = 'https://cloud.google.com/recaptcha-enterprise'
     s.summary      = 'RecaptchaEnterprise solution podspec for iOS'
 
+    s.cocoapods_version = '>= 1.12.0'
+    s.platform = :ios, '12.0'
+    s.swift_version = '5.9'
+
     s.source       = { 
         :git => 'https://github.com/GoogleCloudPlatform/recaptcha-enterprise-mobile-sdk.git', 
         :tag => 'CocoaPods-' + s.version.to_s
