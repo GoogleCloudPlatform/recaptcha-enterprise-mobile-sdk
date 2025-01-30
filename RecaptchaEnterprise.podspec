@@ -14,7 +14,7 @@
 
 Pod::Spec.new do |s|
     s.name         = 'RecaptchaEnterprise'
-    s.version      = '18.7.0-beta01'
+    s.version      = '18.7.0'
     s.license      = { :type => 'Apache-2.0', :file => 'LICENSE' }
     s.authors      = 'Google, Inc.'
     s.homepage     = 'https://cloud.google.com/recaptcha-enterprise'
@@ -35,6 +35,11 @@ Pod::Spec.new do |s|
         'Sources/RecaptchaEnterprise/*.swift',
         'Sources/Public/RecaptchaEnterprise/*.h',
     ]
+
+    s.pod_target_xcconfig = {
+        "VALID_ARCHS[sdk=iphonesimulator*]" => "x86_64 arm64",
+        "VALID_ARCHS[sdk=iphoneos*]" => "arm64"
+    }
     
     s.static_framework = true
     s.dependency 'RecaptchaInterop', '~> 101.0.0'
