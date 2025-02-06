@@ -1,0 +1,42 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <title>reCAPTCHA</title>
+
+  <script type="text/javascript">
+    const onExecute = async (action) => {
+      const executeId = 'rce_' + Math.floor(Math.random() * 100000)
+      window[executeId] = {}
+      window[executeId].bridgeResolve = (token) => {
+        window[executeId].resolve(token)
+        delete window[executeId]
+      }
+      window[executeId].bridgeReject = (err) => {
+        window[executeId].reject(err)
+        delete window[executeId]
+      }
+      const promise =  new Promise((resolve, reject) => {
+		    window[executeId].resolve = (token) => resolve(token)
+		    window[executeId].reject = (err) => reject(err)
+	    })
+      __JS_OBJECT_NAME__.onExecute(action, `window.${executeId}.bridgeResolve`, `window.${executeId}.bridgeReject`);
+
+      return promise
+    };
+
+    const executeClick = async () => {
+        try {
+          const result =await onExecute("login")
+          document.querySelector("#result").textContent = "TOKEN: " + result
+        }
+        catch(err) {
+          document.querySelector("#result").textContent = "ERROR: " + err
+        }
+    }
+  </script>
+</head>
+<body>
+<button onclick="executeClick()">Execute</button>
+<p id="result"></p>
+</body>
+</html>
