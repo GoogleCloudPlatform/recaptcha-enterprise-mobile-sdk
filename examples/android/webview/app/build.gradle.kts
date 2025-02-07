@@ -45,20 +45,16 @@ android {
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
+  buildFeatures {
+    buildConfig = true
+  }
+
   buildTypes {
     debug {
-      readProperties("../config/recaptcha_dev.properties")?.let { properties ->
-          properties.onEach {property ->
-            buildConfigField("String", property.key as String, property.value as String)
-          }
-      }
+      buildConfigField("String", "SITE_KEY", "\"DEV_SITE_KEY\"")
     }
     release {
-      readProperties("../config/recaptcha_prod.properties")?.let { properties ->
-          properties.onEach { property ->
-            buildConfigField("String", property.key as String, property.value as String)
-          }
-      }
+      buildConfigField("String", "SITE_KEY", "\"PROD_SITE_KEY\"")
       isMinifyEnabled = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
