@@ -46,38 +46,24 @@ android {
   }
 
   buildTypes {
+    debug {
+      readProperties("../config/recaptcha_dev.properties")?.let { properties ->
+          properties.onEach {property ->
+            buildConfigField("String", property.key as String, property.value as String)
+          }
+      }
+    }
     release {
+      readProperties("../config/recaptcha_prod.properties")?.let { properties ->
+          properties.onEach { property ->
+            buildConfigField("String", property.key as String, property.value as String)
+          }
+      }
       isMinifyEnabled = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
   }
 
-  flavorDimensions += "version"
-
-  productFlavors{
-
-    readProperties("../config/recaptcha_dev.properties")?.let { properties ->
-      create("dev"){
-        dimension = "version"
-        properties.onEach {property ->
-          buildConfigField("String", property.key as String, property.value as String)
-        }
-      }
-    }
-
-    readProperties("../config/recaptcha_prod.properties")?.let { properties ->
-      create("prod"){
-        dimension = "version"
-        properties.onEach {property ->
-          buildConfigField("String", property.key as String, property.value as String)
-        }
-      }
-    }
-
-    buildFeatures {
-      buildConfig = true
-    }
-  }
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8

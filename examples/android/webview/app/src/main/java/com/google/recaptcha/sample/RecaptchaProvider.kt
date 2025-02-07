@@ -34,7 +34,7 @@ import kotlinx.coroutines.withContext
 object RecaptchaProvider {
 
   private lateinit var recaptchaClient: RecaptchaClient
-  private const val SITE_KEY = BuildConfig.SITE_KEY
+  private val SITE_KEY = BuildConfig.SITE_KEY
 
   /**
    * Trigger the initialization of the RecaptchaClient in the IO scope.
