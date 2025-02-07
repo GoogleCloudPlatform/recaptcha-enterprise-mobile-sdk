@@ -51,7 +51,7 @@ android {
 
   buildTypes {
     debug {
-      buildConfigField("String", "SITE_KEY", "\"6LddNe0nAAAAAOPMV-_srE1UzYIiZApSww-fZ6N9\"")
+      buildConfigField("String", "SITE_KEY", "\"DEV_SITE_KEY\"")
     }
     release {
       buildConfigField("String", "SITE_KEY", "\"PROD_SITE_KEY\"")

@@ -16,12 +16,20 @@
         delete window[executeId]
       }
       const promise =  new Promise((resolve, reject) => {
-        window[executeId].resolve = (token) => resolve(token)
-        window[executeId].reject = (err) => reject(err)
-      })
-      
-      //__JS_OBJECT_NAME__.onExecute(action, `window.${executeId}.bridgeResolve`, `window.${executeId}.bridgeReject`);
-      window.webkit.messageHandlers.onExecute.postMessage({action: action, bridgeResolve:`window.${executeId}.bridgeResolve`, bridgeReject: `window.${executeId}.bridgeReject`})
+		    window[executeId].resolve = (token) => resolve(token)
+		    window[executeId].reject = (err) => reject(err)
+	    })
+
+      if (window.webkit?.messageHandlers){
+        // iOS Bridge
+        window.webkit.messageHandlers.onExecute.postMessage({action: action, bridgeResolve:`window.${executeId}.bridgeResolve`, bridgeReject: `window.${executeId}.bridgeReject`})
+      } else if (RecaptchaJavascriptChannel){
+        // Android Bridge
+        RecaptchaJavascriptChannel.onExecute(action, `window.${executeId}.bridgeResolve`, `window.${executeId}.bridgeReject`);
+      } else {
+        console.log("No bridge")
+        return
+      }
 
       return promise
     };
