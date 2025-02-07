@@ -1,17 +1,16 @@
-# iOS Sample
+# iOS Sample WebView Bridge
 
-The sample is configured to directly open using XCode.
+This demonstrates how to bridge from an embedded WebView into the reCAPTCHA SDK.  To use this in a production application, the JS code in the embdded webpage needs to be added to the site/page being displayed in your webview and is designed to detect if it is an Android or iOS WebView containing a bridge.
+
+The sample is configured to directly open using XCode and uses Swift Package Manager to import the SDK.
+
 
 ## Setup site keys
 
 Using the site keys that were generated following the steps at
 https://cloud.google.com/recaptcha-enterprise/docs/create-key
 
-Make sure you create a *website* key to utilize visual challenges and *not and
-Android or iOS Key*. Create a checkbox challenge key and set the difficulty to
-medium or higher.
-
-Run `pod install` to install the pods for testing.
+Note: The sitekey used here is a mobile sitekey not a web one.
 
 ### Dev site keys
 
