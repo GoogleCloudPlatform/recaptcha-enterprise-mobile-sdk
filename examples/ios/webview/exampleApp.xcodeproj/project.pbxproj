@@ -46,7 +46,6 @@
 		7B5C55692AD4BCE500F9DFFF /* exampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B864BA42AD5FC3A00007219 /* rce.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = rce.html; sourceTree = "<group>"; };
 		7BBE8CF02D553C1500BC7A74 /* RecaptchaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecaptchaRepository.swift; sourceTree = "<group>"; };
-		7BC9C3192ADEC51C008E7A17 /* DebugSettingsSample.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugSettingsSample.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				7B4631EE2AD56D6E009BFC15 /* DebugSettings.xcconfig */,
-				7BC9C3192ADEC51C008E7A17 /* DebugSettingsSample.xcconfig */,
 				7B4631ED2AD56D6E009BFC15 /* ReleaseSettings.xcconfig */,
 				214BD0362A968E020010C78D /* exampleApp */,
 				214BD0352A968E020010C78D /* Products */,
