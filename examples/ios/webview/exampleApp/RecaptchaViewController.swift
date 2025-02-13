@@ -2,8 +2,15 @@ import UIKit
 import WebKit
 
 class RecaptchaViewController: UIViewController {
-  private let webView: WKWebView = WKWebView(frame: .zero)
+
   private var bridge: RecaptchaBridge?
+  private lazy var webView: WKWebView = {
+    let preferences = WKPreferences()
+    preferences.javaScriptEnabled = true
+    let configuration = WKWebViewConfiguration()
+    configuration.preferences = preferences
+    return WKWebView(frame: .zero, configuration: configuration)
+  }()
 
   init() {
     super.init(nibName: nil, bundle: nil)
@@ -16,6 +23,7 @@ class RecaptchaViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+         
     webView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(webView)
 
@@ -42,14 +50,7 @@ class RecaptchaViewController: UIViewController {
     bridge = RecaptchaBridge()
     bridge?.addToWebView(self.webView)
 
-    if #available(iOS 16.4, *) {
-      webView.isInspectable = true
-    } else {
-      // Fallback on earlier versions
-    }
-    webView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
-    webView.accessibilityIdentifier = "RCWKWebView"
-    webView.loadHTMLString(html, baseURL: URL("http://localhost"))
+    webView.loadHTMLString(html, baseURL: nil)
   }
 
   @objc func onClose() {

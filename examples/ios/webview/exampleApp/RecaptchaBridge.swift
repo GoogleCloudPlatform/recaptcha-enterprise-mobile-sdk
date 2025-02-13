@@ -50,7 +50,7 @@ class RecaptchaBridge: NSObject, WKScriptMessageHandler {
     else {
       return
     }
-    print (self.webView?.debugDescription ?? "webView is nil")
+    
     Task.detached(priority: .background){
         let tokenResult = await RecaptchaRepository.getToken(action: RecaptchaAction(customAction:action))
         var cmd: String = ""
