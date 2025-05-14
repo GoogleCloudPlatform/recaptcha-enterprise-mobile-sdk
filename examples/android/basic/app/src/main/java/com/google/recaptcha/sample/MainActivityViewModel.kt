@@ -45,6 +45,7 @@ class MainActivityViewModel(
     updateText("Loading ...")
     viewModelScope.launch {
       RecaptchaProvider.executeAction(RecaptchaAction.LOGIN).onSuccess {token ->
+        Log.d(TAG, token)
         // Send token to backend and receive verdict
         if(backendRepository.assessLoginAction(token)){
           updateText("User can Login")
