@@ -14,7 +14,7 @@
 
 import Foundation
 @_exported import RecaptchaEnterpriseSDK
-import RecaptchaInterop
+@preconcurrency import RecaptchaInterop
 
 /// Interop class binding the RCAActionProtocol to the RecaptchaAction.
 @objc final class RCAAction: NSObject, RCAActionProtocol, Sendable {
