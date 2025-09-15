@@ -14,7 +14,7 @@
 
 Pod::Spec.new do |s|
     s.name         = 'RecaptchaEnterprise'
-    s.version      = '18.8.0-beta02'
+    s.version      = '18.8.0'
     s.license      = { :type => 'Apache-2.0', :file => 'LICENSE' }
     s.authors      = 'Google, Inc.'
     s.homepage     = 'https://cloud.google.com/recaptcha-enterprise'
