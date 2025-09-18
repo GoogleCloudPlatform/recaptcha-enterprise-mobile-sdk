@@ -47,8 +47,8 @@ class MainActivityViewModel(
       RecaptchaProvider.executeAction(RecaptchaAction.LOGIN).onSuccess {token ->
         // Send token to backend and receive verdict
         if(backendRepository.assessLoginAction(token)){
-          updateText("User can Login")
-        }else {
+          updateText("User can Login. Token: " + token)
+        } else {
           updateText("User can't Login")
         }
       }.onFailure {
