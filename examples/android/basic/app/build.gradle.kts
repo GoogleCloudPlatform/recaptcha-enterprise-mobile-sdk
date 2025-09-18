@@ -79,20 +79,30 @@ android {
     }
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    isCoreLibraryDesugaringEnabled = true
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
   }
-  kotlinOptions {
-    jvmTarget = "1.8"
+}
+
+kotlin {
+  jvmToolchain(17)
+}
+
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(17))
   }
 }
 
 dependencies {
+  coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
   implementation("androidx.core:core-ktx:1.9.0")
   implementation("androidx.appcompat:appcompat:1.6.1")
   implementation("com.google.android.material:material:1.9.0")
   implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-  implementation("com.google.android.recaptcha:recaptcha:18.6.1")
+  implementation("com.google.android.recaptcha:recaptcha:18.8.0")
   implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
   implementation("androidx.activity:activity-ktx:1.7.2")
   implementation("androidx.fragment:fragment-ktx:1.6.1")
