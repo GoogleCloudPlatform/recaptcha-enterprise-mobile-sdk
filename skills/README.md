@@ -20,7 +20,7 @@ apps powered by the Gemini API.
 
 | Skill | Description |
 | :--- | :--- |
-| [`recaptcha-transaction-defense-integrator`](skills/recaptcha-transaction-defense-integrator) | Skill for integrating reCAPTCHA Enterprise Transaction Defense and automating ground truth via PSP chargeback webhooks (Stripe, Adyen). |
+| [`recaptcha-transaction-defense-integrator`](./recaptcha-transaction-defense-integrator) | Skill for integrating reCAPTCHA Enterprise Transaction Defense and automating ground truth via PSP chargeback webhooks (Stripe, Adyen). |
 
 ## Installation
 
