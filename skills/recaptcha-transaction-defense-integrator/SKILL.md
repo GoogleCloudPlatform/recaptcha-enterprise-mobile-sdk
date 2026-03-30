@@ -1,5 +1,5 @@
 ---
-name: integrating-recaptcha-transaction-defense
+name: recaptcha-transaction-defense-integrator
 description: Integrates reCAPTCHA Enterprise Transaction Defense and automates ground truth via PSP chargeback webhooks (Stripe, Adyen). Use when a user wants to protect transactions from fraud and close the feedback loop with automated annotations. Don't use for generic reCAPTCHA v2 checkbox integrations or non-transactional bot protection.
 ---
 
