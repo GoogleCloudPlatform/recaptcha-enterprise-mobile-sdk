@@ -21,7 +21,6 @@ let package = Package(
   name: "RecaptchaEnterprise",
   platforms: [
     .iOS(.v15),
-    .visionOS(.v1)
   ],
   products: [
     // Products define the executables and libraries a package produces, and make them visible to other packages.
