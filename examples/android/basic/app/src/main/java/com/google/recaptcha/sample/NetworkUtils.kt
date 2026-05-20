@@ -25,6 +25,7 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
+import kotlin.coroutines.resume
 import kotlinx.coroutines.suspendCancellableCoroutine
 
 /** Contains utility methods for checking and handling network connectivity. */
@@ -110,7 +111,7 @@ object NetworkUtils {
             override fun onAvailable(network: Network) {
               logDebug("Network available (Callback method)")
               connectivityManager.unregisterNetworkCallback(this)
-              continuation.resume(Unit) {}
+              continuation.resume(Unit)
             }
           }
         connectivityManager.registerDefaultNetworkCallback(networkCallback)
@@ -144,7 +145,7 @@ object NetworkUtils {
               if (isAvailable(context)) {
                 logDebug("Network available")
                 context.unregisterReceiver(this)
-                continuation.resume(Unit) {}
+                continuation.resume(Unit)
               }
             }
           }
