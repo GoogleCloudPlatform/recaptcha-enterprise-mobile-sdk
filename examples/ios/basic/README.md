@@ -15,18 +15,13 @@ identifier as this app.
 
 ### Dev site keys
 
-For development, add your site key to `DebugSettings.xcconfig`:
+For `dev` only site keys please add the keys to the `DebugSettings.xcconfig
+file` with the following values:
 
 ```
-SITE_KEY = YOUR_SITE_KEY
+# This site key is used for development only and should never be exposed to
+# customers, copybara is configured to ignore this file and build.gradle
+# to only create the dev flavor if this file exist.
+WEB_SITE_KEY = "YOUR_DEV_SITE_KEY"
+WEB_BASE_URL = "http://YOURDOMAIN"
 ```
-
-## Running Tests
-
-1. Ensure you have configured a valid site key in `DebugSettings.xcconfig`.
-2. Run the tests using Xcode (Product -> Test) or via command line:
-
-   ```bash
-   xcodebuild test -project exampleApp.xcodeproj -scheme exampleApp -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest'
-   ```
-

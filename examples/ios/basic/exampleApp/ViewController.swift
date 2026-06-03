@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     let resultLabel = UILabel()
     resultLabel.numberOfLines = 0
     resultLabel.text = ""
-    resultLabel.accessibilityIdentifier = "recaptchaResultLabel"
     return resultLabel
   }()
 
@@ -23,7 +22,6 @@ class ViewController: UIViewController {
     let logLabel = UILabel()
     logLabel.numberOfLines = 0
     logLabel.text = ""
-    logLabel.accessibilityIdentifier = "recaptchaLogLabel"
     return logLabel
   }()
 
