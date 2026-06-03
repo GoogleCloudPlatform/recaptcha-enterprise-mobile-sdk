@@ -37,13 +37,17 @@ final class exampleAppUITests: XCTestCase {
     XCTAssertTrue(resultLabel.exists, "Result label not found")
     
     // We expect the result label to eventually show "Token received"
-    let existsPredicate = NSPredicate(format: "text == 'Token received'")
+    let existsPredicate = NSPredicate(format: "label == 'Token received'")
     let expectation = expectation(for: existsPredicate, evaluatedWith: resultLabel, handler: nil)
     
     // Wait up to 10 seconds for the token to be returned
     let result = XCTWaiter().wait(for: [expectation], timeout: 10)
     
-    XCTAssertEqual(result, .completed, "Failed to receive token within timeout")
+    if result != .completed {
+      let logLabel = app.staticTexts["recaptchaLogLabel"]
+      XCTFail("Failed to receive token within timeout. Result label: '\(resultLabel.label)', Log label: '\(logLabel.exists ? logLabel.label : "N/A")'")
+      return
+    }
     
     // Verify that the log label contains the token (and is not an error message)
     let logLabel = app.staticTexts["recaptchaLogLabel"]
