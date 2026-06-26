@@ -12,6 +12,12 @@ and
 
 ## ⚠️ Important Updates 
 
+### Upgrade your reCAPTCHA Enterprise Mobile SDK to prevent potential app crashes
+
+We have identified a technical issue affecting SDK versions prior to `v18.9.0` that causes crashes for users on iOS 27 Beta.
+
+To ensure continuous application stability and protect your end-users, please upgrade your application dependency to **reCAPTCHA Enterprise Mobile SDK version 18.9.0 or higher**
+
 ### CocoaPods Support Ending
 
 Please note that versions **18.9.X** will be the **final releases** of the
